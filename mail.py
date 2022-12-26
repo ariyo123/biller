@@ -75,7 +75,7 @@ for code in contents1[:]:
 
     #Here i want to sent Billing reports to the recipients.
         
-            from_addr = 'atalktolade@gmail.com'
+            from_addr = 'ata@gmail.com'
             to_addr = f"{email}"
             subject = F'{bankName} BVN_NIN_FRSC_Phone Validation Billing Report'
             content = f'Kindly find your billing report attached between {final_date} and {final_date1}'
@@ -98,7 +98,7 @@ for code in contents1[:]:
                     msg.attach(part)
             server = smtplib.SMTP('smtp.gmail.com', 587) 
             server.starttls(context=context)
-            server.login(from_addr, 'jniowfhqttnzurzd')
+            server.login(from_addr, '<password>')
             server.send_message(msg, from_addr=from_addr, to_addrs=[to_addr])
             print(f"Mail has been sent to {bankName} with their file")
 
