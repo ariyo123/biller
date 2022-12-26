@@ -79,7 +79,7 @@ for agent in contents2[:]:
     print(f"Main file splited to {agent}'s  Directory")
         
 # Loop through the Agents config again to read each slpited files per agent and determining what to pay each
-import os
+
 with open(path2, 'r') as file_object:
     linesq=file_object.read()
 
