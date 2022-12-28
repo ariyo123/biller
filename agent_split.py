@@ -79,7 +79,7 @@ for agent in contents2[:]:
     print(f"Main file splited to {agent}'s  Directory")
         
 # Loop through the Agents config again to read each slpited files per agent and determining what to pay each
-
+import os
 with open(path2, 'r') as file_object:
     linesq=file_object.read()
 
@@ -100,11 +100,11 @@ with open(path2, 'r') as file_object:
         
         
         # Read the each agent splitted file into a dataframe
-        df = pd.read_csv(f'{final_full_paths}')
+        df = pd.read_csv(f'{final_full_paths}',encoding='utf-8')
         #group each file by Agent code and count the enrolment per Agent
         group_agent=df.groupby('AGENT CODE').count()
         #determine the columns i want to return from the each agent's billing fine
-        df = df.loc[:, ['AGT MGT INST NAME','AGENT CODE', 'AMOUNT']]
+        df = df.loc[:, ['AGT MGT INST NAME','AGENT CODE']]
         #count the enrolment per agent and add the count to a column in the dataframe
         counts = df.groupby('AGENT CODE').size().reset_index(name='count')
         #actuall 
